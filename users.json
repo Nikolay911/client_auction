@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "password": "$2a$10$EwBkkkX3A21kDuKtrB20ye9yokOmaJCkCM8GyyRCx4PVzvvPl09s6",
+      "login": "клиент1"
+    },
+    {
+      "password": "$2a$10$ElkFuqzyS\/dEvvJtxUtgeeNE02ZS3bQulMChfQGcSmUIZMMrXl4HS",
+      "login": "клиент111"
+    },
+    {
+      "password": "$2a$10$lYEB1mh7FPPBuKRXIT96T.0aRU339fcOgBTK..oMf7iso0gMLrlf2",
+      "login": "клиент2"
+    }
+  ]
+}
