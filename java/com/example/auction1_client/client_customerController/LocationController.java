@@ -1,26 +1,27 @@
 package com.example.auction1_client.client_customerController;
 
-import com.example.auction1_client.client_DAO.LocationDAO;
+import com.example.auction1_client.client_services.LocationService;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.lang.Nullable;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController()
+@RequestMapping("/client")
 public class LocationController {
 
-    private final LocationDAO locationDAO;
+    private final LocationService locationService;
 
-    public LocationController(LocationDAO locationDAO) {
-        this.locationDAO = locationDAO;
+    public LocationController(LocationService locationService) {
+        this.locationService = locationService;
     }
 
 
-    @PostMapping("/location/{idCustomer}")
-    public Boolean createLocation(@PathVariable int idCustomer,
-                                  @Nullable @RequestBody JsonNode body){
-        return locationDAO.createLocation(idCustomer, body);
+    @PostMapping("/location/customer/{CustomerId}")
+    public Boolean createLocation(@PathVariable int CustomerId,
+                                  @Nullable @RequestBody JsonNode body,
+                                  HttpServletRequest request) {
+        return locationService.createLocation(CustomerId, body, request);
     }
 }
